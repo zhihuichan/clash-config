@@ -24,7 +24,7 @@ jobs:
           snell_SERVER: ${{ secrets.SNELL_SERVER }}
           PORT: ${{ secrets.PORT }}
           snell-PORT: ${{ secrets.SNELL_PORT }}
-          PASS: ${{ secrets.PASS }}
+          PASS: ${{ secrets.ALLPASS }}
 
       - name: Upload to Release
         uses: softprops/action-gh-release@v2
