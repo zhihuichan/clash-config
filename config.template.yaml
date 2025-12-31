@@ -19,7 +19,7 @@ dns:
 proxies:
    - { name: 'BWG', type: ss, server: ${BWG_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
    - { name: 'KR', type: ss, server: ${KR_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
-   - { name: 'snell-home', type: snell, server: ${SNELL_SERVER}, port: ${SNELL_PORT}, psk: ${ALLPASS} }
+   - { name: 'snell-home', type: snell, server: ${SNELLSERVER}, port: ${SNELL_PORT}, psk: ${ALLPASS} }
    - { name: 'OVH', type: ss, server: ${OVH_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
 
 proxy-groups:
