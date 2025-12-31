@@ -29,6 +29,7 @@ proxy-groups:
   - { name: 'USCARD', type: select, proxies: ['BWG', 'KR', 'OVH'] }
 
 rules:
+    - 'DOMAIN-SUFFIX,t-mobile.com,PROXY'
     - 'DOMAIN-SUFFIX,F-DROID.ORG,PROXY'
     - 'DOMAIN-KEYWORD,kraken,PROXY'
     - 'DOMAIN-SUFFIX,nodeseek.com,PROXY'
@@ -40,6 +41,8 @@ rules:
     - 'DOMAIN-SUFFIX,fluzapp.com,PROXY' 
     - 'DOMAIN-SUFFIX,fluz.app,PROXY' 
     - 'DOMAIN-SUFFIX,capitaloneshopping.com,PROXY' 
+    - 'DOMAIN-SUFFIX,capitaloneoffers.com,PROXY'
+    - 'DOMAIN-SUFFIX,travel.capitalone.com,PROXY' 
     - 'DOMAIN-SUFFIX,hostloc.com,PROXY' 
     - 'DOMAIN-SUFFIX,v2ex.com,PROXY' 
     - 'DOMAIN-SUFFIX,seats.aero,PROXY'  
@@ -2007,6 +2010,7 @@ rules:
     - 'DOMAIN-KEYWORD,blogspot,PROXY'
     - 'DOMAIN-KEYWORD,gmail,PROXY'
     - 'DOMAIN-KEYWORD,google,PROXY'
+    - 'DOMAIN-KEYWORD,youtube,PROXY'    
     - 'DOMAIN-KEYWORD,recaptcha,PROXY'
     - 'IP-CIDR,172.110.32.0/21,PROXY,no-resolve'
     - 'IP-CIDR,173.194.0.0/16,PROXY,no-resolve'
