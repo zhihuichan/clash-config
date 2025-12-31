@@ -1,23 +1,22 @@
 name: Build Clash Config
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - config.template.yaml
-  workflow_dispatch:
-
-permissions:
-  contents: write   # 非常关键，否则无法 commit
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Render config.yaml from template
+      - name: Render config
+        run: |
+          envsubst < config.template.yaml > config.yaml
         env:
           BWG_SERVER: ${{ secrets.BWG_SERVER }}
           KR_SERVER: ${{ secrets.KR_SERVER }}
@@ -26,13 +25,12 @@ jobs:
           PORT: ${{ secrets.PORT }}
           SNELL_PORT: ${{ secrets.SNELL_PORT }}
           ALLPASS: ${{ secrets.ALLPASS }}
-        run: |
-          envsubst < config.template.yaml > config.yaml
 
-      - name: Commit config.yaml
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add config.yaml
-          git commit -m "auto: update config.yaml" || echo "No changes"
-          git push
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Clash Config
+          files: config.yaml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
