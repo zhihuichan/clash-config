@@ -19,7 +19,6 @@ jobs:
           envsubst < config.template.yaml > config.yaml
         env:
           BWG_SERVER: ${{ secrets.BWG_SERVER }}
-          KR_SERVER: ${{ secrets.KR_SERVER }}
           OVH_SERVER: ${{ secrets.OVH_SERVER }}
           SNELL: ${{ secrets.SNELL }}
           PORT: ${{ secrets.PORT }}
