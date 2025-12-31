@@ -29,6 +29,7 @@ proxy-groups:
   - { name: 'USCARD', type: select, proxies: ['BWG', 'KR', 'OVH'] }
 
 rules:
+    - 'DOMAIN-SUFFIX,doctorofcredit.com,PROXY'
     - 'DOMAIN-SUFFIX,t-mobile.com,PROXY'
     - 'DOMAIN-SUFFIX,F-DROID.ORG,PROXY'
     - 'DOMAIN-KEYWORD,kraken,PROXY'
