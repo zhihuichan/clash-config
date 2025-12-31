@@ -23,8 +23,8 @@ jobs:
           OVH_SERVER: ${{ secrets.OVH_SERVER }}
           snell_SERVER: ${{ secrets.SNELL_SERVER }}
           PORT: ${{ secrets.PORT }}
-          snell-PORT: ${{ secrets.SNELL_PORT }}
-          PASS: ${{ secrets.ALLPASS }}
+          SNELL_PORT: ${{ secrets.SNELL_PORT }}
+          ALLPASS: ${{ secrets.ALLPASS }}
 
       - name: Upload to Release
         uses: softprops/action-gh-release@v2
