@@ -21,9 +21,9 @@ jobs:
           BWG_SERVER: ${{ secrets.BWG_SERVER }}
           KR_SERVER: ${{ secrets.KR_SERVER }}
           OVH_SERVER: ${{ secrets.OVH_SERVER }}
-          snell_SERVER: ${{ secrets.snell_SERVER }}
+          snell_SERVER: ${{ secrets.SNELL_SERVER }}
           PORT: ${{ secrets.PORT }}
-          snell-PORT: ${{ secrets.snell-PORT }}
+          snell-PORT: ${{ secrets.SNELL_PORT }}
           PASS: ${{ secrets.PASS }}
 
       - name: Upload to Release
