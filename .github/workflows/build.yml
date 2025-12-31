@@ -1,0 +1,36 @@
+name: Build Clash Config
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - config.template.yaml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Render config
+        run: |
+          envsubst < config.template.yaml > config.yaml
+        env:
+          BWG_SERVER: ${{ secrets.BWG_SERVER }}
+          KR_SERVER: ${{ secrets.KR_SERVER }}
+          OVH_SERVER: ${{ secrets.OVH_SERVER }}
+          snell_SERVER: ${{ secrets.snell_SERVER }}
+          PORT: ${{ secrets.PORT }}
+          snell-PORT: ${{ secrets.snell-PORT }}
+          PASS: ${{ secrets.PASS }}
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Clash Config
+          files: config.yaml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
