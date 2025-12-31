@@ -21,7 +21,7 @@ jobs:
           BWG_SERVER: ${{ secrets.BWG_SERVER }}
           KR_SERVER: ${{ secrets.KR_SERVER }}
           OVH_SERVER: ${{ secrets.OVH_SERVER }}
-          snell_SERVER: ${{ secrets.SNELL_SERVER }}
+          SNELL_SERVER: ${{ secrets.SNELL_SERVER }}
           PORT: ${{ secrets.PORT }}
           SNELL_PORT: ${{ secrets.SNELL_PORT }}
           ALLPASS: ${{ secrets.ALLPASS }}
