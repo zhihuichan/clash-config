@@ -20,6 +20,7 @@ jobs:
         env:
           BWG_SERVER: ${{ secrets.BWG_SERVER }}
           OVH_SERVER: ${{ secrets.OVH_SERVER }}
+          SEOUL: ${{ secrets.OVH_SERVER }}
           SNELL: ${{ secrets.SNELL }}
           PORT: ${{ secrets.PORT }}
           SNELL_PORT: ${{ secrets.SNELL_PORT }}
