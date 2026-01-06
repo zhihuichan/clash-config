@@ -28,6 +28,9 @@ proxy-groups:
   - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH'] }
 
 rules:
+    - 'DOMAIN-SUFFIX,barclaycard.com,PROXY'
+    - 'DOMAIN-SUFFIX,barclayus.com,PROXY'
+    - 'DOMAIN-SUFFIX,barclay.com,PROXY'
     - 'DOMAIN-SUFFIX,equifax.com,PROXY'
     - 'DOMAIN-SUFFIX,doctorofcredit.com,PROXY'
     - 'DOMAIN-SUFFIX,t-mobile.com,PROXY'
