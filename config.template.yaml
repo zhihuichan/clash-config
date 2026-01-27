@@ -30,6 +30,7 @@ proxy-groups:
   - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH', 'SEOUL', 'HK_ALI'] }
 
 rules:
+    - 'DOMAIN-SUFFIX,anytimemailbox.com,PROXY'
     - 'DOMAIN-SUFFIX,bfmr.com,PROXY'
     - 'DOMAIN-SUFFIX,barclaycard.com,PROXY'
     - 'DOMAIN-SUFFIX,barclayus.com,PROXY'
