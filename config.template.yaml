@@ -20,14 +20,13 @@ proxies:
    - { name: 'BWG', type: ss, server: ${BWG_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
    - { name: 'snell-home', type: snell, server: ${SNELL}, port: ${SNELL_PORT}, psk: ${ALLPASS} }
    - { name: 'OVH', type: ss, server: ${OVH_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
-   - { name: 'HK_ALI', type: ss, server: ${HK_ALI}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
    - { name: 'SEOUL', type: ss, server: ${OVH_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
 
 proxy-groups:
-  - { name: '自动选择快速节点', type: url-test, proxies: ['BWG', 'OVH', 'SEOUL', 'HK_ALI'], url: 'http://www.gstatic.com/generate_204', interval: 300 }
-  - { name: 'PROXY', type: select, proxies: ['自动选择快速节点', 'BWG', 'OVH', 'SEOUL', 'HK_ALI'] }
+  - { name: '自动选择快速节点', type: url-test, proxies: ['BWG', 'OVH', 'SEOUL'], url: 'http://www.gstatic.com/generate_204', interval: 300 }
+  - { name: 'PROXY', type: select, proxies: ['自动选择快速节点', 'BWG', 'OVH', 'SEOUL'] }
   - { name: 'HOME', type: select, proxies: ['snell-home'] }
-  - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH', 'SEOUL', 'HK_ALI'] }
+  - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH', 'SEOUL'] }
 
 rules:
     - 'DOMAIN-SUFFIX,walmart.com,PROXY'
