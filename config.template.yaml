@@ -28,6 +28,7 @@ proxy-groups:
   - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH'] }
 
 rules:
+    - 'DOMAIN-SUFFIX,att.com,PROXY'
     - 'DOMAIN-SUFFIX,bfmr.com,PROXY'
     - 'DOMAIN-SUFFIX,walmart.com,PROXY'
     - 'DOMAIN-SUFFIX,anytimemailbox.com,PROXY'
