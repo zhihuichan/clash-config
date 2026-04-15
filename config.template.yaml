@@ -29,6 +29,7 @@ proxy-groups:
   - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH', 'ORACLE'] }
 
 rules:
+    - 'DOMAIN-SUFFIX,imgur.com,PROXY'
     - 'DOMAIN-SUFFIX,nssurge.com,PROXY'
     - 'DOMAIN-SUFFIX,aircanada.com,PROXY'
     - 'DOMAIN-SUFFIX,ups.com,PROXY'
