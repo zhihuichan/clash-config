@@ -180,7 +180,6 @@ rules:
     - 'DOMAIN-SUFFIX,cn-ssl.ls.apple.com,DIRECT'
     - 'DOMAIN-SUFFIX,gspe19-cn-ssl.ls.apple.com,DIRECT'
     - 'DOMAIN,vsmarketplacebadge.apphb.com,PROXY'
-    - 'DOMAIN-SUFFIX,1drv.ms,PROXY'
     - 'DOMAIN-SUFFIX,21vbc.com,PROXY'
     - 'DOMAIN-SUFFIX,21vbluecloud.com,PROXY'
     - 'DOMAIN-SUFFIX,21vbluecloud.net,PROXY'
