@@ -19,7 +19,7 @@ dns:
 proxies:
    - { name: 'BWG', type: anytls, server: ${BWG_SERVER}, port: ${PORT}, password: '${ALLPASS}', client-fingerprint: chrome, udp: true, sni: '${BWG_SERVER}', alpn: [h2, http/1.1], skip-cert-verify: true }
    - { name: 'OVH', type: ss, server: ${OVH_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
-   - { name: 'ORACLE', type: ss, server: ${ORACLE}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
+   - { name: 'ORACLE', type: ss, server: ${ORACLE_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
    - { name: 'snell-home', type: snell, server: ${SNELL}, port: ${SNELL_PORT}, psk: ${ALLPASS} }
 
 proxy-groups:
