@@ -18,15 +18,14 @@ dns:
     fake-ip-filter: ['*.lan', '*.linksys.com', '*.linksyssmartwifi.com', swscan.apple.com, mesu.apple.com, swquery.apple.com, swdownload.apple.com, swcdn.apple.com, swdist.apple.com, '*.msftconnecttest.com', '*.msftncsi.com', 'xbox.*.microsoft.com', 'xbox.*.*.microsoft.com', +.xboxlive.com, 'time.*.com', 'time.*.gov', 'time.*.edu.cn', 'time.*.apple.com', 'time1.*.com', 'time2.*.com', 'time3.*.com', 'time4.*.com', 'time5.*.com', 'time6.*.com', 'time7.*.com', 'ntp.*.com', 'ntp.*.com', 'ntp1.*.com', 'ntp2.*.com', 'ntp3.*.com', 'ntp4.*.com', 'ntp5.*.com', 'ntp6.*.com', 'ntp7.*.com', '*.time.edu.cn', '*.ntp.org.cn', +.pool.ntp.org, time1.cloud.tencent.com, lens.l.google.com, +.music.163.com, +.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, '*.kuwo.cn', api-jooxtt.sanook.com, api.joox.com, joox.com, +.y.qq.com, +.music.tc.qq.com, aqqmusic.tc.qq.com, +.stream.qqmusic.qq.com, +.xiami.com, +.music.migu.cn, '+.stun.*.*', '+.stun.*.*.*', '+.stun.*.*.*.*', '+.stun.*.*.*.*.*', +.srv.nintendo.net, '*.n.n.srv.nintendo.net', +.stun.playstation.net, +.battlenet.com.cn, +.wotgame.cn, +.wggames.cn, +.wowsgame.cn, +.wargaming.net, '*.square-enix.com', '*.finalfantasyxiv.com', '*.ffxiv.com', '*.ff14.sdo.com', ff.dorado.sdo.com, localhost.ptlogin2.qq.com, localhost.sec.qq.com, proxy.golang.org, +.qq.com, +.baidu.com, +.163.com, +.126.net, +.taobao.com, +.jd.com, +.tmall.com, '*.mcdn.bilivideo.cn', +.nvidia.com, +.nvidia.cn, +.nvgs.nvidia.com, +.nvgs.nvidia.cn, shark007.net]
 proxies:
    - { name: 'BWG', type: anytls, server: ${BWG_SERVER}, port: ${PORT}, password: '${ALLPASS}', client-fingerprint: chrome, udp: true, sni: '${BWG_SERVER}', alpn: [h2, http/1.1], skip-cert-verify: true }
-   - { name: 'OVH', type: ss, server: ${OVH_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
-   - { name: 'ORACLE', type: ss, server: ${ORACLE_SERVER}, port: ${PORT}, cipher: aes-256-gcm, password: ${ALLPASS}, udp: true }
+   - { name: 'OVH', type: anytls, server: ${OVH_SERVER}, port: ${PORT}, password: '${ALLPASS}', client-fingerprint: chrome, udp: true, sni: '${OVH_SERVER}', alpn: [h2, http/1.1], skip-cert-verify: true }
    - { name: 'snell-home', type: snell, server: ${SNELL}, port: ${SNELL_PORT}, psk: ${ALLPASS} }
 
 proxy-groups:
-  - { name: '自动选择快速节点', type: url-test, proxies: ['BWG', 'OVH', 'ORACLE'], url: 'http://www.gstatic.com/generate_204', interval: 300 }
-  - { name: 'PROXY', type: select, proxies: ['自动选择快速节点', 'BWG', 'OVH', 'ORACLE'] }
+  - { name: '自动选择快速节点', type: url-test, proxies: ['BWG', 'OVH'], url: 'http://www.gstatic.com/generate_204', interval: 300 }
+  - { name: 'PROXY', type: select, proxies: ['自动选择快速节点', 'BWG', 'OVH'] }
   - { name: 'HOME', type: select, proxies: ['snell-home'] }
-  - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH', 'ORACLE'] }
+  - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH'] }
 
 rules:
     - 'DOMAIN-SUFFIX,americanexpress.com,PROXY'
