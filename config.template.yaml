@@ -28,6 +28,7 @@ proxy-groups:
   - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH'] }
 
 rules:
+    - 'DOMAIN-SUFFIX,newegg.com,PROXY'
     - 'DOMAIN-SUFFIX,yahoo.com,PROXY'
     - 'DOMAIN-SUFFIX,opentable.com,PROXY'
     - 'DOMAIN-SUFFIX,chase.com,PROXY'
