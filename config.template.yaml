@@ -28,6 +28,8 @@ proxy-groups:
   - { name: 'USCARD', type: select, proxies: ['BWG', 'OVH'] }
 
 rules:
+    - 'DOMAIN-SUFFIX,6bit.cc,PROXY'
+    - 'DOMAIN-SUFFIX,topcashback.com,PROXY'
     - 'DOMAIN-SUFFIX,topcashback.com,PROXY'
     - 'DOMAIN-SUFFIX,awardtool.com,PROXY'
     - 'DOMAIN-SUFFIX,delta.com,PROXY'
